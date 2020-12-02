@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} ^/unicomer-forms [NC]
+RewriteRule ^unicomer-forms/ /unicomer-forms/home/cases [R=301,L]
+
+RewriteCond $1 !^(index\.php|img|assets|css|js|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./public/index.php/$1 [L,QSA]
