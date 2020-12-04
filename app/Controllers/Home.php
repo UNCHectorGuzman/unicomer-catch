@@ -275,6 +275,7 @@ class Home extends BaseController
 		$branches = model('App\Models\ChainBranchModel');
 
 		$data = [
+			"warranty_months" => [3,6,12,24,36,60],
 			"case_priorities" => $priorities->findAll(),
 			"case_types" => $case_types->findAll(),
 			"document_types" => $doc_types->findAll(),

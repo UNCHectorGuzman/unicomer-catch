@@ -272,10 +272,15 @@
 							</div>
 							<div class="row form-group">
 								<label class="col-sm-4">
-									Garantia Proveedor
+									Garantia Proveedor (meses)
 								</label>
 								<div class="col-sm-8">
-									<input type="number" name="warranty_provider" id="warranty_provider" class="form-control" min="0" />
+									<select name="warranty_provider" id="warranty_provider" class="form-control">
+										<option value="">Selecciones</option>
+										<?php foreach( $warranty_months as $months ): ?>
+										<option value="<?= $months ?>"> <?= $months ?> Meses </option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 							</div>
 							<div class="row form-group">
@@ -313,10 +318,15 @@
 							</div>
 							<div class="row form-group">
 								<label class="col-sm-4">
-									Garantía Contrato
+									Garantía Contrato (meses)
 								</label>
 								<div class="col-sm-8">
-									<input type="number" name="warranty_contract" id="warranty_contract" class="form-control" min="0" />
+									<select name="warranty_contract" id="warranty_contract" class="form-control">
+										<option value="">Selecciones</option>
+										<?php foreach( $warranty_months as $months ): ?>
+										<option value="<?= $months ?>"> <?= $months ?> Meses </option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 							</div>
 							<div class="row form-group">
