@@ -4,7 +4,7 @@ class Home extends BaseController
 {
 
 	var $fields;
-	var $record_type = "0126C0000008fkOQAQ";
+	var $record_type;
 
 	function __construct(){
 
@@ -24,6 +24,8 @@ class Home extends BaseController
 			"Informacion_de_Cierre__c",
 			// "Fecha_de_Compra__c"
 		];
+
+		$this->record_type = ENVIRONMENT == 'production' ? "0122S0000002U0IQAU" : "0126C0000008fkOQAQ";
 	}
 
 	public function index( $country = "", $chain = "", $branch = "" )	{
@@ -315,7 +317,7 @@ class Home extends BaseController
 	private function _build_client() {
 
 		$options = [
-	        'baseURI' => 'https://unicomer--servicesv.my.salesforce.com/',
+	        'baseURI' => ENVIRONMENT == 'production' ? 'https://unicomer.my.salesforce.com/' : 'https://unicomer--servicesv.my.salesforce.com/',
 	        'http_errors' => false,
 	        'verify' => false,
 	        'headers' => [
@@ -444,13 +446,23 @@ class Home extends BaseController
 		if( session("sc_token") )
 			return session("sc_token");
 
-		$query = [
-			"grant_type" => "password",
-			"client_id" => "3MVG9QBLg8QGkFerR.7VoKURp08AzNQyhB1GC1VO5GcQ271NtBZjO0RPeYbc_ZOz8JVcrdHfs1ftlfag9T_gm",
-			"client_secret" => "4D2C2789198824C464BC5427B80603677D50DE4284E05E708F7624779F8606AD",
-			"username" => "mauricio_mendez@unicomer.com.servicesv",
-			"password" => "Unicomer2020pgEMWmf1hrVh6KMYT1X6CUJ4"
-		];
+		if( ENVIRONMENT == 'production' ){
+			$query = [
+				"grant_type" => "password",
+				"client_id" => "3MVG9QBLg8QGkFerR.7VoKURp08AzNQyhB1GC1VO5GcQ271NtBZjO0RPeYbc_ZOz8JVcrdHfs1ftlfag9T_gm",
+				"client_secret" => "4D2C2789198824C464BC5427B80603677D50DE4284E05E708F7624779F8606AD",
+				"username" => "carlos_bonilla@unicomer.com",
+				"password" => "C@r1it0\$gKyi7fNmAq4Lte51GrnUHvpQc"
+			];
+		} else {
+			$query = [
+				"grant_type" => "password",
+				"client_id" => "3MVG9QBLg8QGkFerR.7VoKURp08AzNQyhB1GC1VO5GcQ271NtBZjO0RPeYbc_ZOz8JVcrdHfs1ftlfag9T_gm",
+				"client_secret" => "4D2C2789198824C464BC5427B80603677D50DE4284E05E708F7624779F8606AD",
+				"username" => "mauricio_mendez@unicomer.com.servicesv",
+				"password" => "Unicomer2020pgEMWmf1hrVh6KMYT1X6CUJ4"
+			];
+		}
 
 		$response = $client
 			// ->setBody( $body )

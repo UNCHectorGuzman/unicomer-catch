@@ -23,7 +23,7 @@
 <!-- <div class="d-flex d-column h-100"> -->
 	<div class="d-flex flex-grow flex-fill h-100">
 		<div class="text-white bg-dark d-flex flex-column p-3 justify-content-center w-25">
-			<h2>UnicomerCatch<br> <small>Login</small> </h2>
+			<h2>Unicomer SCM<br> <small>Login</small> </h2>
 			<p>Inicia sesión para acceder.</p>
 		</div>
 

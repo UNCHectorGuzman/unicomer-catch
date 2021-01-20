@@ -14,10 +14,10 @@ class Users extends BaseController
 		$offset = $this->request->getVar("start");
 		$draw = $this->request->getVar("draw");
 		
-		$users = model('App\Models\UserModel')->limit($limit, $offset)->findAll();
+		$users = model('App\Models\UserModel');
 
-		$total = count($users);
-		$totalFilter = count($users);
+		$total = $users->countAllResults();
+		$totalFilter = $users->countAllResults();
 
 		return json_encode([
 			"draw" => $draw,
@@ -30,7 +30,7 @@ class Users extends BaseController
 								    	$user["branch"],
 								    	anchor(base_url("users/edit/{$user["id"]}"), 'Editar', ['class' => 'btn btn-primary'])
 								    ];
-								}, $users)
+								}, $users->limit($limit, $offset)->find())
 		]);
 	}
 

@@ -2,9 +2,9 @@
 
 <?= $this->section('profile') ?>
 
-<h1>Cambia tu contraseña</h1>
-
 <div class="container">
+	<h3>Cambia tu contraseña</h3>
+	
 	<div class="row">
 		<div class="col-sm-12">
 			<form action="<?= base_url("profile") ?>" method="post">

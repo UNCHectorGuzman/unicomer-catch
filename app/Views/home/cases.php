@@ -6,8 +6,9 @@
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 <h1>Casos</h1>
+<a href="<?= base_url("home/create_case") ?>" class="btn btn-primary">Agregar</a>
 
-<div class="table-responsive">
+<div class="table-responsive  mt-5">
 	
 <table class="table table-striped">
 	<thead>

@@ -2,7 +2,7 @@
 <html class="h-100">
 <head>
 	
-	<title>UnicomerCatch</title>
+	<title>Unicomer SCM</title>
 	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -28,20 +28,31 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">UnicomerCatch</a><br />
-  <small class="navbar-text">
-  	Usuario en sesion
-  	<a class="nav-link" href="<?= base_url("profile") ?>"> <?= session("username") ?> </a>
-  </small>
+  <a class="navbar-brand" href="#">Unicomer SCM</a><br />
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("home/cases") ?>">Casos</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Perfil <?= session("username") ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="<?= base_url("profile") ?>"> Cambiar clave </a>
+          <!-- <div class="dropdown-divider"></div> -->
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("home/create_case") ?>">Crear Caso</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="casesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Casos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="casesDropdown">
+          <a class="dropdown-item" href="<?= base_url("home/cases") ?>">Buscar</a>
+          <a class="dropdown-item" href="<?= base_url("home/create_case") ?>">Nuevo</a>
+        </div>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url("users") ?>">Usuarios</a>
       </li>
