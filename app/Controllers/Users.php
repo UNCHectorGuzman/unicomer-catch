@@ -68,11 +68,13 @@ class Users extends BaseController
 			"branch_id" => $this->request->getPost("branch"),
 			"username" => $this->request->getPost("username"),
 			"password" => $this->request->getPost("password"),
+			"role_id" => $this->request->getPost("role"),
+			"country_code" => "sv"
 		];
 
 		if( $id == null ){
 			$user->insert($info);
-			$id = $user->insertID();
+			$id = $user->getInsertID();
 		} else {
 			$user->update($id, $info);
 		}

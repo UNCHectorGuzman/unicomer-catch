@@ -9,3 +9,9 @@ y a futuro implementado a otros paises
 - Base de datos MySQL
 - ER docs/sys_unicomer_formsv2.mwb
 - PHP version 7.2 o superior
+
+# Change log
+
+02 15 2021
+- Se agrega el archivo index.html a la raiz del proyecto
+- Correccion de bug al agregar usuario
