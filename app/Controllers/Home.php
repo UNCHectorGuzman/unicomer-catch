@@ -8,7 +8,7 @@ class Home extends BaseController
 
 	function __construct(){
 
-		$this->fields = "tipo_documento__c, Numero_Documento__c, SuppliedName, Telefono_de_Contacto__c, CaseNumber, Origin, Subject, Description, Status, Comments, Informacion_de_Cierre__c, FORMAT(CreatedDate) CreatedDate";
+		$this->fields = "tipo_documento__c, IdNumber__c, SuppliedName, Telefono_de_Contacto__c, CaseNumber, Origin, Subject, Description, Status, Comments, Informacion_de_Cierre__c, FORMAT(CreatedDate) CreatedDate";
 
 		$this->searchables = [
 			"CaseNumber",
@@ -16,7 +16,7 @@ class Home extends BaseController
 			"Telefono_de_Contacto__c",
 			// "Motivo__c",
 			// "Priority",
-			"Numero_Documento__c",
+			"IdNumber__c",
 			"SuppliedName",
 			"Origin",
 			"Subject",
@@ -381,7 +381,7 @@ class Home extends BaseController
 
 		$all = [
 			"tipo_documento__c",
-			"Numero_Documento__c",
+			"IdNumber__c",
 			"SuppliedName",
 			"Telefono_de_Contacto__c",
 			"SuppliedEmail",
@@ -511,7 +511,7 @@ class Home extends BaseController
 	private function _parse_body( $data ){
 		return [
 			"tipo_documento__c" => $data["document_type"],
-			"Numero_Documento__c"  => $data["document_id"],
+			"IdNumber__c"  => $data["document_id"],
 			"SuppliedName"  => $data["name"],
 			"Telefono_de_Contacto__c"  => $data["phone"],
 			"SuppliedEmail"  => $data["email"],

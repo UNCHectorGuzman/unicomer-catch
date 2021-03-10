@@ -18,7 +18,7 @@
 		</tr>
 		<tr>
 			<th> Número Documento </th>
-			<td> <?= $record->Numero_Documento__c ?> </td>
+			<td> <?= $record->IdNumber__c ?> </td>
 		</tr>
 		<tr>
 			<th> Nombre Cliente </th>
